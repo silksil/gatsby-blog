@@ -1,10 +1,5 @@
 import styled from "styled-components";
-import {
-  GroupIsFocused,
-  GroupIsHovered,
-  BaseInputField,
-  BaseInputGroup
-} from "../styled";
+import { GroupIsFocused, BaseInputField, BaseInputGroup } from "../styled";
 
 export const InputGroup = styled.div`
   position: relative;

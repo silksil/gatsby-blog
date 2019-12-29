@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Text } from "../../../../typography";
 import NewsletterIcon from "../../../../icons/UI/Newsletter";
 import * as S from "./styled";
-import { Grid, GridItem } from "../../../../grids";
 
 const Wrapper = ({ title, description, children }) => (
   <S.Wrapper>

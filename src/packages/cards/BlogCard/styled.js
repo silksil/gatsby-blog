@@ -50,10 +50,6 @@ export const Content = styled.div`
   ${({ isFaded }) => isFaded && fadedContent};
 `;
 
-const smallText = css`
-  font-size: 20px;
-`;
-
 export const Heading = styled(BaseHeading)`
   font-size: ${({ isSmall }) => (isSmall ? "16px" : "28px")};
   margin-bottom: ${({ isSmall }) => (isSmall ? "16px" : "10px")};

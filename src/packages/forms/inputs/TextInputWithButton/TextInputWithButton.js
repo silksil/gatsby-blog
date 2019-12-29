@@ -15,26 +15,19 @@ const TextInputWithButton = ({
   includeStrengthFeedback,
   helperText,
   buttonText,
+  isRequired,
   ...props
 }) => {
   const context = useFormControl({
     name,
     defaultValue,
+    isRequired,
     ...props
   });
 
-  const {
-    setValue,
-    fieldId,
-    isRequired,
-    error,
-    value,
-    inputRef,
-    handleBlur
-  } = context;
+  const { setValue, fieldId, error, value, inputRef, handleBlur } = context;
 
   const [isFocused, setFocus] = useState(false);
-  const [isBlurredOnce, setIsBlurredOnce] = useState(false);
 
   const inputMessageProps = error
     ? { text: error, variant: "error" }
@@ -60,7 +53,6 @@ const TextInputWithButton = ({
           noValidate
           onFocus={() => setFocus(true)}
           onBlur={() => {
-            setIsBlurredOnce(true);
             setFocus(false);
             handleBlur();
           }}

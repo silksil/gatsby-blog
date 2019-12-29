@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -22,14 +22,14 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-`
+`;
 
 export const StyledPage = styled.div`
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.primary.contrast};
-`
+`;
 
 export const Inner = styled.div`
   width: 100%;
   margin: 0 auto;
-`
+`;

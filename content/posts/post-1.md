@@ -4,6 +4,7 @@ title: "Setting Up Virtual Hosts"
 template: post
 thumbnail: "../thumbnails/apache.png"
 slug: setting-up-virtual-hosts
+description: An article about virtual hosts
 categories:
   - Tools
 tags:

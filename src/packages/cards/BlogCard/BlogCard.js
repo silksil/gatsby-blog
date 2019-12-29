@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./styled";
-import { Text, Heading } from "../../typography";
+import { Text } from "../../typography";
 
 const BlogCard = ({ title, subtitle, imageSrc, isFaded }) => {
   return (

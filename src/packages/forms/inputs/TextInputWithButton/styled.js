@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { breakpoints } from "../../../breakpoints";
 import { Text } from "../../../typography";
@@ -8,6 +8,7 @@ import SubmitButton from "../../SubmitButton";
 export const InputGroup = styled.div`
   ${BaseInputGroup};
   ${BaseInputField};
+  ${GroupIsFocused};
 
   border: ${({ theme }) => `1px solid ${theme.primary.contrastSecondary}`};
 `;
