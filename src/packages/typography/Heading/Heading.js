@@ -1,20 +1,26 @@
 import React from "react";
 import { string, bool, oneOf } from "prop-types";
 import * as S from "./styled";
-import COLORS from "../enums";
+import styled from "styled-components";
+import { COLORS, useContrastColor } from "@packages/themes";
 
-import useColor from "../useColor";
+const HeadingStyle = styled.div`
+  ${S.HeadingBase};
+  ${props => S[props.size]};
+`;
 
 const Heading = ({ element, color, ...props }) => {
-  const textColor = useColor(color);
-  return <S.HeadingBase as={element} color={textColor} {...props} />;
+  const textColor = useContrastColor(color);
+
+  return <HeadingStyle as={element} color={textColor} {...props} />;
 };
 
 Heading.defaultProps = {
   children: null,
   uppercase: false,
   center: false,
-  bold: false
+  bold: true,
+  font: "secondary"
 };
 
 Heading.propTypes = {
@@ -22,8 +28,10 @@ Heading.propTypes = {
   uppercase: bool,
   center: bool,
   element: oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]).isRequired,
+  size: oneOf(["xs", "s", "m", "l", "xl", "xxl"]).isRequired,
   color: oneOf(Object.values(COLORS)).isRequired,
-  bold: bool
+  bold: bool,
+  font: oneOf(["primary", "secondary"])
 };
 
 export default Heading;

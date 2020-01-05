@@ -4,6 +4,7 @@ import { IconButton as BaseIconButton } from "../../packages/buttons";
 import { Heading as BaseHeading } from "../../packages/typography";
 
 export const FooterContainer = styled.footer`
+  border-top: ${({ theme }) => `1px solid ${theme.primary.light}`};
   padding: 48px 40px 48px 40px;
   display: flex;
   flex-direction: column;

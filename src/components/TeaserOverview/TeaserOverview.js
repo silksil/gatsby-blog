@@ -1,27 +1,24 @@
 import React from "react";
 import BlogCard from "@packages/cards";
 import { Grid, GridItem } from "@packages/grids";
+import { Link } from "gatsby";
 
-const TeaserOverview = ({ teasers }) => (
-  <Grid>
-    {teasers &&
-      teasers.map(({ featuredImage, title }) => {
-        return (
-          <GridItem
-            columnEndSm="span 12"
-            columnEndMd="span 6"
-            columnEndLg="span 6"
-          >
-            <BlogCard
-              title={title}
-              imageSrc={featuredImage && featuredImage.mediaItemUrl}
-              isFaded
-            />
-          </GridItem>
-        );
-      })}
-  </Grid>
-);
+const TeaserOverview = ({ articles }) =>
+  articles &&
+  articles.map(
+    ({
+      node: {
+        fields: { slug },
+        frontmatter: { title, image }
+      }
+    }) => {
+      return (
+        <Link to={slug}>
+          <BlogCard title={title} imageSrc={image} isFaded />
+        </Link>
+      );
+    }
+  );
 
 TeaserOverview.propTypes = {};
 

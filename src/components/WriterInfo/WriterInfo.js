@@ -6,7 +6,7 @@ import { Text } from "../../packages/typography";
 const WriterInfo = ({ imageSrc, personName, text }) => (
   <S.Wrapper>
     <S.Image alt={`Profiel picture ${personName}`} src={imageSrc} />
-    <Text as="p" color="primaryContrastSecondary">
+    <Text as="p" color="primaryContrast">
       {text}
     </Text>
   </S.Wrapper>

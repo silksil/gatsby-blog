@@ -10,9 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: normal;
     font-style: normal;
+    $font-size: 1rem;
     padding: 0;
     margin: 0;
     line-height: 1.5;

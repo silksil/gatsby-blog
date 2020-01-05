@@ -1,25 +1,35 @@
 import React from "react";
-
 import BlogCard from "@packages/cards";
 import { Grid, GridItem } from "@packages/grids";
+import { Link } from "gatsby";
 
-const ArticleOverview = ({ articles }) => (
+const ArticlesOverview = ({ articles }) => (
   <Grid>
     {articles &&
-      articles.map(({ title, tags, imageSrc }) => {
-        return (
-          <GridItem
-            columnEndSm="span 12"
-            columnEndMd="span 6"
-            columnEndLg="span 4"
-          >
-            <BlogCard title={title} tags={tags} imageSrc={imageSrc} />
-          </GridItem>
-        );
-      })}
+      articles.map(
+        ({
+          node: {
+            fields: { slug },
+            frontmatter: { title, image }
+          }
+        }) => {
+          return (
+            <GridItem
+              columnEndSm="span 12"
+              columnEndMd="span 6"
+              columnEndLg="span 6"
+              columnEndXl="span 4"
+            >
+              <Link to={slug}>
+                <BlogCard title={title} imageSrc={image} />
+              </Link>
+            </GridItem>
+          );
+        }
+      )}
   </Grid>
 );
 
-ArticleOverview.propTypes = {};
+ArticlesOverview.propTypes = {};
 
-export default ArticleOverview;
+export default ArticlesOverview;

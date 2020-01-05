@@ -18,20 +18,6 @@ const Layout = ({ children }) => (
       <Meta />
       <NavBar />
       <Inner>{children}</Inner>
-      <BackgroundNewsletter>
-        <Grid>
-          <GridItem
-            columnStartSm="1"
-            columnEndSm="14"
-            columnStartMd="1"
-            columnEndMd="14"
-            columnStartLg="4"
-            columnEndLg="10"
-          >
-            <Newsletter />
-          </GridItem>
-        </Grid>
-      </BackgroundNewsletter>
       <Footer />
     </StyledPage>
   </ThemeProvider>

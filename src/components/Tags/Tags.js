@@ -4,7 +4,7 @@ import { Text } from "@packages/typography";
 
 const Tags = ({ items }) => (
   <Fragment>
-    <Text as="span" color="primaryContrastSecondary">
+    <Text as="span" color="primaryContrastLight">
       TAGGED:
     </Text>
     {items.map((tag, index) => (

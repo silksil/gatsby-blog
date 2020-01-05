@@ -1,10 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Subtitle, Text } from "../../typography";
+import { Text, Heading } from "../../typography";
 import { Grid, GridItem } from "../../grids";
 import * as S from "./styled";
 
-const Header = ({ title, subtitle, image, tags, date, ...props }) => (
+const Header = ({
+  title,
+  subtitle,
+  image,
+  tags,
+  date,
+  author,
+  timeToRead,
+  ...props
+}) => (
   <S.HeaderWrapper {...props}>
     <Grid>
       <GridItem
@@ -12,30 +21,48 @@ const Header = ({ title, subtitle, image, tags, date, ...props }) => (
         columnEndSm="14"
         columnStartMd="1"
         columnEndMd="14"
-        columnStartLg="3"
-        columnEndLg="11"
+        columnStartLg="4"
+        columnEndLg="10"
       >
-        <S.Heading element="h1" color="primaryContrast" bold>
+        <Heading bold element="h1" size="xxl" color="primaryContrastDark" bold>
           {title}
-        </S.Heading>
-        <S.TextAndDate>
-          <S.Author as="span" color="primaryContrastSecondary">
-            Jan Kuitenbrouwer{" "}
-          </S.Author>
-          <Text as="span" color="primaryContrastSecondary">
-            25 oktober 2019, 13:54
+        </Heading>
+        {subtitle && (
+          <Heading
+            font="primary"
+            thin
+            element="h2"
+            color="primaryContrast"
+            style={{ marginTop: "16px" }}
+          >
+            {subtitle}
+          </Heading>
+        )}
+        <div style={{ marginTop: "16px" }}>
+          {timeToRead && (
+            <Text
+              as="span"
+              color="primaryContrastLight"
+              style={{ marginRight: "4px" }}
+            >
+              {timeToRead} minutes read ·
+            </Text>
+          )}
+          <Text lighter as="span" color="primaryContrastLight">
+            {date}
           </Text>
-        </S.TextAndDate>
+        </div>
+
         <S.Tags>
           {tags &&
             tags.map(tag => (
-              <S.Tag as="span" color="primaryContrastSecondary">
+              <S.Tag as="span" color="primaryContrastLight">
                 {tag}
               </S.Tag>
             ))}
         </S.Tags>
       </GridItem>
-      <GridItem fullWidthSm fullWidthMd columnStartLg="1" columnEndLg="14">
+      <GridItem fullWidthSm fullWidthMd columnStartLg="4" columnEndLg="10">
         <S.HeaderImg srcSet={` ${image}`} src={image} alt={`${title}`} />
       </GridItem>
       <GridItem
@@ -45,13 +72,8 @@ const Header = ({ title, subtitle, image, tags, date, ...props }) => (
         columnEndMd="14"
         columnStartLg="4"
         columnEndLg="10"
-      >
-        {subtitle && (
-          <Subtitle element="h2" color="primaryContrastSecondary">
-            {subtitle}
-          </Subtitle>
-        )}
-      </GridItem>
+        style={{ marginTop: "0px" }}
+      ></GridItem>
     </Grid>
   </S.HeaderWrapper>
 );

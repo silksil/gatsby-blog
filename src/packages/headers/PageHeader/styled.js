@@ -2,23 +2,28 @@ import styled from "styled-components";
 import { breakpoints } from "../../breakpoints";
 
 export const Wrapper = styled.div`
-  background: ${({ theme }) => theme.primary.main};
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10%;
+
+  img {
+    margin-left: 16px;
+  }
 `;
 
 export const HeaderContent = styled.div`
   color: ${({ theme }) => theme.primary.contrast};
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 20%;
+
   h1 {
     font-weight: 900;
     font-size: 64px;
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 32.256px;
   }
   ${breakpoints.lg} {
     text-align: left;

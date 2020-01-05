@@ -1,12 +1,10 @@
 import React from "react";
 import { string, oneOf } from "prop-types";
 import * as S from "./styled";
-import COLORS from "../enums";
-
-import useColor from "../useColor";
+import { COLORS, useContrastColor } from "@packages/themes";
 
 const Subtitle = ({ element, color, ...props }) => {
-  const textColor = useColor(color);
+  const textColor = useContrastColor(color);
   return <S.SubtitleBase as={element} color={textColor} {...props} />;
 };
 

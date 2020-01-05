@@ -1,32 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Heading } from "../../typography";
+import { Heading, Text } from "../../typography";
 import * as S from "./styled";
 import { Grid, GridItem } from "../../grids";
 
 const Header = ({ title, subtitle, color, ...props }) => (
   <S.Wrapper {...props}>
-    <Grid>
-      <GridItem
-        columnStartSm="1"
-        columnEndSm="span 12"
-        columnStartMd="1"
-        columnEndMd="span 10"
-        columnStartLg="1"
-        columnEndLg="8"
-      >
-        <S.HeaderContent>
-          <Heading color="primaryContrast" as="h1">
-            {title}
-          </Heading>
-          {subtitle && (
-            <Heading color="primaryContrastSecondary" as="h2">
-              {subtitle}
-            </Heading>
-          )}
-        </S.HeaderContent>
-      </GridItem>
-    </Grid>
+    <S.HeaderContent>
+      <Heading color="primaryContrastDark" as="h1">
+        {title}
+      </Heading>
+      {subtitle && (
+        <Text
+          color="primaryContrast"
+          as="h2"
+          dangerouslySetInnerHTML={{ __html: subtitle }}
+        ></Text>
+      )}
+    </S.HeaderContent>
+    <img
+      src={
+        "https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      }
+    />
   </S.Wrapper>
 );
 

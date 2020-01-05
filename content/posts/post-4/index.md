@@ -1,12 +1,15 @@
 ---
 date: 2015-10-17
-title: "Setting Up Virtual Hosts"
+title: "Setting Up Virtual Hosts Jo "
 template: post
-thumbnail: "../thumbnails/apache.png"
+image: "https://images.ctfassets.net/cnu0m8re1exe/UZzmRKCNPTYwqb5VLr0ns/d3f8240497a520717814b4be13e57a40/Man-Sleeping.jpg?w=650&h=433&fit=fill"
 slug: setting-up-virtual-hosts
 description: An article about virtual hosts
+highlight:
+  - New
 categories:
   - Tools
+  - Popular
 tags:
   - php
   - setup
@@ -162,7 +165,7 @@ At the bottom of the file, type the name of your virtual host.
 
 Almost done! After restarting your MAMP server, you can go to `http://example.dev:8888` and it will take you to your path.
 
-![](../images/Screen-Shot-2015-10-16-at-11.25.27-PM.png)
+![](./images/Screen-Shot-2015-10-16-at-11.25.27-PM.png)
 
 That's pretty good. But, I want to make this perfect. I want to remove the :8888 from the end of the URL.
 

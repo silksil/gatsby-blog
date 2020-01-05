@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 400px;
   cursor: pointer;
-  display: inline-block;
   position: relative;
   background-color: ${({ theme }) => theme.primary.main};
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);

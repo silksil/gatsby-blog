@@ -1,22 +1,98 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { breakpoints } from "../../breakpoints";
+import { xl, l, m, s, xs } from "../Heading/styled";
+
+const FontSizes = css`
+  p,
+  ul,
+  ol,
+  li {
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    ${breakpoints.md} {
+      font-size: 1.125rem;
+      line-height: 2rem;
+    }
+
+    ${breakpoints.lg} {
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
+  }
+
+  h1 {
+    ${xl};
+  }
+  h2 {
+    ${l};
+  }
+  h3 {
+    ${m};
+  }
+
+  h4 {
+    ${s};
+  }
+
+  h5,
+  h6 {
+    ${xs};
+  }
+
+  blockquote {
+    font-size: 1.75rem;
+    line-height: 1.6rem;
+
+    ${breakpoints.md} {
+      font-size: 2rem;
+    }
+
+    cite {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+    }
+  }
+`;
 
 export const TextBase = styled.div`
   color: ${({ color }) => color};
-  font-weight: ${props => (props.bold ? "bold" : "normal")};
+  font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
+  font-weight: ${({ lighter }) => (lighter ? "lighter" : "normal")};
   text-align: ${props => (props.center ? "center" : null)};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0px;
+
+  ${FontSizes};
+
   img,
   p,
   h1,
   h2,
   h3,
+  h4,
+  h5,
+  h6,
   blockquote {
     margin: 0;
     padding: 0;
-    margin-top: 28px;
+    margin-top: 16px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${({ theme }) => theme.font.secondary};
+    color: ${({ theme }) => theme.primary.contrastDark};
+    + p,
+    + blockquote,
+    + ul {
+      margin-top: 0px;
+    }
   }
 
   img {
@@ -26,6 +102,8 @@ export const TextBase = styled.div`
     width: 100%;
   }
   a {
+    color: ${({ theme }) => theme.secondary.main};
+    border-bottom: ${({ theme }) => `2px solid ${theme.secondary.light} `};
     margin: 0;
     &:hover {
       cursor: pointer;
@@ -36,6 +114,10 @@ export const TextBase = styled.div`
     border-left: ${({ theme }) => `3px solid ${theme.secondary.main} `};
     padding-left: 14px;
 
+    ${breakpoints.md} {
+      padding-left: 22px;
+    }
+
     cite {
       padding-top: 8px;
       display: block;
@@ -43,15 +125,6 @@ export const TextBase = styled.div`
       text-transform: uppercase;
       font-style: normal;
       color: ${({ theme }) => theme.primary.contrastSecondary};
-    }
-
-    &:before {
-      content: " “ ";
-      display: block;
-      font-size: 32px;
-      color: ${({ theme }) => theme.secondary.main};
-      line-height: 32px;
-      font-family: Arial;
     }
   }
 
@@ -61,6 +134,8 @@ export const TextBase = styled.div`
     list-style-image: none;
     padding: 0px;
     margin: 0;
+    margin-top: 16px;
+
     li {
       margin-top: 16px;
       padding-left: 0px;
@@ -70,51 +145,6 @@ export const TextBase = styled.div`
       &:first-child {
         margin-top: 0px;
       }
-    }
-  }
-  p,
-  ul,
-  ol,
-  li {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 29px;
-  }
-  h1,
-  h2,
-  h3 {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    + p {
-      margin-top: 8px;
-    }
-  }
-
-  blockquote {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 44px;
-    cite {
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 12px;
-    }
-  }
-
-  ${breakpoints.lg} {
-    p,
-    ul,
-    ol,
-    li {
-      font-size: 18px;
-      line-height: 36px;
-      font-weight: 400;
-    }
-    blockquote {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 48px;
     }
   }
 `;

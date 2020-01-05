@@ -10,7 +10,7 @@ const Wrapper = ({ title, description, children }) => (
       <S.Heading bold element="h4">
         {title}
       </S.Heading>
-      <Text as="p" color="primaryContrastSecondary">
+      <Text as="p" color="primaryContrast">
         {description}
       </Text>
       <S.Screen>{children}</S.Screen>
