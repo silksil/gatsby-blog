@@ -11,6 +11,8 @@ categories:
   - Tools
 tags:
   - anxiety
+  - love
+  - people
 ---
 
 So, I bought a one-way flight to Europe. I'm not much of a planner, to be honest, but some level of planning must be done. I'm going to lay out the most important things I've done and considered here in my typical manner.

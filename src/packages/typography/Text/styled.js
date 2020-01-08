@@ -86,7 +86,6 @@ export const TextBase = styled.div`
   h4,
   h5,
   h6 {
-    font-family: ${({ theme }) => theme.font.secondary};
     color: ${({ theme }) => theme.primary.contrastDark};
     + p,
     + blockquote,
@@ -102,8 +101,8 @@ export const TextBase = styled.div`
     width: 100%;
   }
   a {
-    color: ${({ theme }) => theme.secondary.main};
-    border-bottom: ${({ theme }) => `2px solid ${theme.secondary.light} `};
+    color: ${({ theme }) => theme.secondary.light};
+    border-bottom: ${({ theme }) => `2px solid ${theme.secondary.dark} `};
     margin: 0;
     &:hover {
       cursor: pointer;

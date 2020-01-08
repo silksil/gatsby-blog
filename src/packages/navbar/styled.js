@@ -10,11 +10,10 @@ export const NavBar = styled.nav`
   width: 100%;
   height: 50px;
   padding: 16px 0px;
-  background-color: ${({ theme, isTransparent }) =>
-    isTransparent ? "transparent" : theme.primary.main};
+  background-color: ${({ theme }) => theme.background};
   transition: background-color 0.3s ease;
-  box-shadow: ${({ theme, isTransparent, isVisible }) =>
-    isTransparent || !isVisible ? "0" : ` 0 0 48px ${theme.primary.shadow}`};
+  border-bottom: ${({ theme, isTransparent, isVisible }) =>
+    isTransparent || !isVisible ? "none" : ` 1px solid ${theme.primary.light}`};
   transition: box-shadow 1s ease-in-out;
   top: ${({ isVisible }) => (isVisible ? "0px" : "-50px")};
   transition: top 0.3s ease;
@@ -54,6 +53,8 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
 
   .active {
+    color: ${({ theme }) => theme.tertiary.main};
+    line-height: 1.8;
     border-bottom: ${({ theme }) => `2px solid ${theme.tertiary.main} `};
   }
 `;

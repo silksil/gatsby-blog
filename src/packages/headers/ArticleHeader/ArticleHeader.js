@@ -24,13 +24,13 @@ const Header = ({
         columnStartLg="4"
         columnEndLg="10"
       >
-        <Heading bold element="h1" size="xxl" color="primaryContrastDark" bold>
+        <Heading bold element="h1" size="xxl" color="primaryContrastDark">
           {title}
         </Heading>
         {subtitle && (
           <Heading
             font="primary"
-            thin
+            lighter
             element="h2"
             color="primaryContrast"
             style={{ marginTop: "16px" }}
@@ -45,15 +45,17 @@ const Header = ({
               color="primaryContrastLight"
               style={{ marginRight: "4px" }}
             >
-              {timeToRead} minutes read ·
+              {timeToRead} minutes read
             </Text>
           )}
+          <Text as="span" bold color="secondaryLight">
+            ·{" "}
+          </Text>
           <Text lighter as="span" color="primaryContrastLight">
             {date}
           </Text>
         </div>
-
-        <S.Tags>
+        <S.Tags style={{ marginBottom: "16px" }}>
           {tags &&
             tags.map(tag => (
               <S.Tag as="span" color="primaryContrastLight">
@@ -65,15 +67,6 @@ const Header = ({
       <GridItem fullWidthSm fullWidthMd columnStartLg="4" columnEndLg="10">
         <S.HeaderImg srcSet={` ${image}`} src={image} alt={`${title}`} />
       </GridItem>
-      <GridItem
-        columnStartSm="1"
-        columnEndSm="14"
-        columnStartMd="1"
-        columnEndMd="14"
-        columnStartLg="4"
-        columnEndLg="10"
-        style={{ marginTop: "0px" }}
-      ></GridItem>
     </Grid>
   </S.HeaderWrapper>
 );

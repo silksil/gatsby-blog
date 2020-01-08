@@ -49,6 +49,12 @@ export const xs = css`
   }
 `;
 
+const getFontWeight = (bold, lighter) => {
+  if (bold) return "bold";
+  if (lighter) return "lighter";
+  return "normal";
+};
+
 export const HeadingBase = css`
   font-family: ${({ font, theme }) =>
     font === "primary" ? theme.font.primary : theme.font.secondary};
@@ -57,6 +63,5 @@ export const HeadingBase = css`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: ${({ color }) => color};
-  font-weight: ${({ bold }) => (bold ? "800" : 400)};
-  font-weight: ${({ thin }) => (thin ? "300" : 400)};
+  font-weight: ${({ bold, lighter }) => getFontWeight(bold, lighter)};
 `;

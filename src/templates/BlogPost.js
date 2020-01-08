@@ -6,14 +6,14 @@ import { Grid, GridItem, GridSpacer } from "@packages/grids";
 import { Text } from "@packages/typography";
 import SEO from "@components/seo";
 import RelatedArticles from "@components/RelatedArticles";
+import Tags from "@packages/Tags";
 import formatDate from "@utils/formatDate";
+import { Newsletter } from "@components/Newsletter";
 import Break from "@packages/break";
 
 export default ({ data }) => {
   const post = data.post;
   const relatedArticles = data.relatedArticles.edges;
-
-  console.log(post.timeToRead);
 
   return (
     <Layout>
@@ -39,7 +39,7 @@ export default ({ data }) => {
           columnEndLg="10"
         >
           <Text
-            color="primaryContrastDark"
+            color="primaryContrast"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
         </GridItem>
@@ -51,8 +51,12 @@ export default ({ data }) => {
           columnStartLg="4"
           columnEndLg="10"
         >
-          <Break style={{ marginBottom: "24px" }} />
+          <Break style={{ marginBottom: "40px" }} />
+          <Text as="span"> Tagged with: </Text>{" "}
+          <Tags tags={post.frontmatter.tags} />
+          <Break style={{ marginBottom: "40px", marginTop: "40px" }} />
           <RelatedArticles articles={relatedArticles} />
+          <Newsletter />
         </GridItem>
       </Grid>
     </Layout>

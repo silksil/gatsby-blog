@@ -7,7 +7,9 @@ const {
   PRIMARY_CONTRAST_DARK,
   PRIMARY_CONTRAST_LIGHT,
   SECONDARY_CONTRAST,
-  TERTIARY_CONTRAST
+  TERTIARY_CONTRAST,
+  SECONDARY_MAIN,
+  SECONDARY_LIGHT
 } = COLORS;
 
 const useColor = color => {
@@ -17,7 +19,9 @@ const useColor = color => {
     [PRIMARY_CONTRAST_DARK]: theme.primary.contrastDark,
     [PRIMARY_CONTRAST_LIGHT]: theme.primary.contrastLight,
     [SECONDARY_CONTRAST]: theme.secondary.contrast,
-    [TERTIARY_CONTRAST]: theme.tertiary.contrast
+    [TERTIARY_CONTRAST]: theme.tertiary.contrast,
+    [SECONDARY_MAIN]: theme.secondary.main,
+    [SECONDARY_LIGHT]: theme.secondary.light
   };
   return colors[color];
 };

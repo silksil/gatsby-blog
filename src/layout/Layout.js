@@ -6,18 +6,19 @@ import themes from "./themes";
 import Meta from "./Meta";
 import { GlobalStyle, Inner, StyledPage } from "./styled";
 
-import { Grid, GridItem } from "@packages/grids";
-import { Newsletter, BackgroundNewsletter } from "@components/Newsletter";
+import { GridSpacer } from "@packages/grids";
+
 import NavBar from "@components/NavBar";
 import Footer from "@components/Footer";
 
 const Layout = ({ children }) => (
-  <ThemeProvider theme={themes.light}>
+  <ThemeProvider theme={themes.dark}>
     <StyledPage>
       <GlobalStyle />
       <Meta />
       <NavBar />
       <Inner>{children}</Inner>
+      <GridSpacer />
       <Footer />
     </StyledPage>
   </ThemeProvider>

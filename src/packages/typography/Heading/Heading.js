@@ -19,7 +19,8 @@ Heading.defaultProps = {
   children: null,
   uppercase: false,
   center: false,
-  bold: true,
+  bold: false,
+  lighter: false,
   font: "secondary"
 };
 
@@ -31,6 +32,7 @@ Heading.propTypes = {
   size: oneOf(["xs", "s", "m", "l", "xl", "xxl"]).isRequired,
   color: oneOf(Object.values(COLORS)).isRequired,
   bold: bool,
+  lighter: bool,
   font: oneOf(["primary", "secondary"])
 };
 

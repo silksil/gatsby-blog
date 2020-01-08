@@ -9,7 +9,7 @@ const Meta = () => (
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
       rel="stylesheet"
     />
   </Helmet>

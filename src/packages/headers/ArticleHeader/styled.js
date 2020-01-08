@@ -16,6 +16,7 @@ export const HeaderImg = styled.img`
 
 export const Tags = styled.div`
   margin-top: 16px;
+
   ${breakpoints.md} {
     margin-top: 24px;
   }
@@ -28,6 +29,7 @@ export const Tag = styled(Text)`
   border-radius: 4px;
   margin-left: 8px;
   padding: 5px;
+
   &:first-child {
     margin-left: 0px;
   }

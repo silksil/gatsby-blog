@@ -1,8 +1,8 @@
 const SECONDARY = {
-  main: "#FFD500",
-  dark: "#f7b801",
-  light: "#fff5da",
-  contrast: "black"
+  main: "#663399",
+  dark: "#351F64",
+  light: "#B17ACC",
+  contrast: "white"
 };
 
 const TERTIARY = {
@@ -28,8 +28,11 @@ const FONT = {
   secondary: "Playfair Display, serif"
 };
 
+const BORDER_RADIUS = "8px";
+
 const themes = {
   light: {
+    borderRadius: BORDER_RADIUS,
     font: FONT,
     app: {
       focus: "blue",
@@ -69,15 +72,16 @@ const themes = {
     }
   },
   dark: {
+    borderRadius: BORDER_RADIUS,
     font: FONT,
-    background: "#202020;",
+    background: "#121117;",
     primary: {
       dark: "#131313",
-      main: "#3a3a3a",
+      main: "#232029",
       light: "#33383f",
-      contrast: "#818384",
-      contrastDark: "#b3b9c5",
-      contrastLight: "#828c99",
+      contrast: "#D9D7E0",
+      contrastDark: "#FFFFFF",
+      contrastLight: "#B6B4BC",
       shadow: "transparent",
       shadowSecondary: "transparent"
     },

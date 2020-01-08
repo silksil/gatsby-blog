@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import Img from "../image";
 import { Heading, Text } from "@packages/typography";
 import * as S from "./styled";
 import formatDate from "@utils/formatDate";
@@ -9,7 +8,14 @@ import formatDate from "@utils/formatDate";
 const RelatedArticles = ({ articles }) => {
   return (
     <Fragment>
-      <Heading font="primary" color="primaryContrastDark" size="l" element="h2">
+      <Heading
+        font="primary"
+        color="primaryContrastDark"
+        size="l"
+        element="h2"
+        bold
+        font="secondary"
+      >
         Related Articles
       </Heading>
       {articles &&
@@ -27,10 +33,10 @@ const RelatedArticles = ({ articles }) => {
             return (
               <Link to={slug} key={title}>
                 <S.ArticleItem>
-                  {image ? <Img fixed={image} /> : <div />}
+                  {image ? <S.Img fixed={image} /> : <div />}
                   <S.TitleAndDate>
                     <Heading
-                      color="primaryContrast"
+                      color="primaryContrastDark"
                       size=""
                       element="h3"
                       bold={false}
@@ -38,7 +44,7 @@ const RelatedArticles = ({ articles }) => {
                     >
                       {title}
                     </Heading>
-                    <Text color="primaryContrast">{formattedDate}</Text>
+                    <Text color="primaryContrastLight">{formattedDate}</Text>
                   </S.TitleAndDate>
                   {isNew && <S.Alert type="new">New!</S.Alert>}
                   {isPopular && <S.Alert type="popular">Popular!</S.Alert>}
