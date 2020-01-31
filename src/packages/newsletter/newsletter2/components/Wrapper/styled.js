@@ -4,7 +4,11 @@ import { Heading as BaseHeading } from "../../../../typography";
 
 export const Wrapper = styled.div`
   width: 100%;
-  padding: 16px 0px;
+  border: ${({ theme }) => `1px solid ${theme.primary.light}`};
+  svg {
+    margin-left: -4px;
+    margin-top: -8px;
+  }
 
   ${breakpoints.md} {
     display: flex;

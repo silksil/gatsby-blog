@@ -6,9 +6,6 @@ import * as S from "./styled";
 const Footer = () => (
   <S.FooterContainer>
     <S.Content>
-      <S.Heading bold element="h4">
-        Follow Me
-      </S.Heading>
       <SocialIcons />
       <S.Autograph></S.Autograph>
     </S.Content>
